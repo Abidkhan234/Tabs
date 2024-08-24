@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: #eee;
+    font-family: sans-serif;
+}
+.container{
+    width: 100%;
+    margin: 0 10px;
+    box-shadow: 0 30px 40px rgba(0,0,0,0.0.200);
+    display: flex;
+    position: relative;
+}
+.container input{
+    display: none;
+}
+.scroll-bar{
+    display: flex;
+    overflow: hidden;
+}
+.tab-name{
+    color:#242948;
+    padding: 15px 20px;
+    line-height: 1;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    border-top-left-radius:15px ;
+    border-top-right-radius:15px ;
+    transition: all 100ms;
+    margin-bottom: 10px;
+}
+input:checked + label .tab-name{
+    background-color: #fff;
+   color: #02AA31;
+}
+.tab-content{
+    display: flex;
+    position: absolute;
+    top: 35px;
+    left: 0;
+    border-radius: 15px;
+    box-shadow: 0px 6px 12px 0px rgb(0 0 0 / 7%);
+    background-color: #fff;
+    transition: all 100ms;
+    opacity: 0;
+    z-index: 0;
+}
+.tab-content-info{
+    align-content: center;
+}
+.tab-content-info h1{
+    margin:10px 0;
+    color: #02AA31;
+    font-size: 37.73px;
+    font-weight: 700;
+}
+.tab-content-info p{
+    margin:30px 0;
+    color: #242948;
+    font-size: 15.4px;
+    font-weight: 300;
+    line-height: 1.8em;
+}
+.tab-content-info a{
+    color: #02AA31;
+    fill: #02AA31;
+    transition: all .3s;
+    text-decoration: none;
+}
+
+input:checked + label .tab-content{
+    opacity: 1;
+    z-index: 1;
+}
+.tab-content-info{
+    width: 50%;
+    padding: 20px;
+}
+
+.tab-content-image{
+    width: 50%;
+    padding: 10px;
+}
+.tab-content-image img{
+    max-width: 100%;
+    height: auto;
+}
+
+@media(max-width:767px){
+    .scroll-bar{
+        overflow-x: scroll;
+    }
+    .scroll-bar::-webkit-scrollbar{
+        height: 4px;
+    }
+    .scroll-bar::-webkit-scrollbar-thumb{
+        background-color: gray;
+        border-radius: 5px;
+    }
+    .tab-name{
+        margin-bottom: 0;
+    }
+    .tab-content{
+        top: 50px;
+        flex-direction: column;
+    }
+    .tab-content-info{
+        padding-top: 0;
+        width: 100%;
+    }
+    .tab-content-image{
+        width: 100%;
+    }
+}
